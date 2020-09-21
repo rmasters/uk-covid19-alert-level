@@ -1,0 +1,19 @@
+movements:
+  - date: 2020-09-21
+    source: https://www.gov.uk/government/news/update-from-the-uk-chief-medical-officers-on-the-covid-19-alert-level
+    fromLevel: 3
+    toLevel: 4
+    type: recommendation
+    bodies:
+      - Joint Biosecurity Centre
+      - Chief Medical Officers
+
+  - date: 2020-06-19
+    source: https://www.gov.uk/government/news/update-from-the-uk-chief-medical-officers-on-the-uk-alert-level
+    fromLevel: 4
+    toLevel: 3
+    type: recommendation
+    bodies:
+      - Joint Biosecurity Centre
+      - Chief Medical Officers
+
