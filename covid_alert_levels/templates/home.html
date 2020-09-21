@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UK COVID-19 Alert Level (unofficial)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <h1>UK COVID-19 Alert Level API
+      <span class="disclaimer">Unofficial!</span>
+    </h1>
+
+    <p class="readthis">
+    <strong>Do not rely on this site as a primary information source</strong>. This API and webpage is provided purely for novelty use. For coronavirus advice, consult the <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/" target="_blank">NHS</a> or <a href="https://www.gov.uk/coronavirus" target="_blank">GOV.UK</a>.
+    </p>
+
+    <article class="alert-level alert-level--{{ level.label }}">
+      <p class="alert-level__intro">The last updated alert level is:</p>
+      <div class="alert-level__container">
+        <h2 class="alert-level__label">{{ level.label }}</h2>
+        <div>
+          <q class="alert-level__description">{{ level.description }}</q>
+          <p>
+            <a href="{{ movement.source }}" target="_blank">
+              {{ movement.direction|replace('up', 'raised')|replace('down', 'lowered')|title }} from {{ movement.from_level }}, <abbr title="{{ movement.date }}">{{ movement.date|daysago }}</abbr>.
+            </a>
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <p>Available as JSON from <a href="{{ url_for('endpoints.get_current_alert_level') }}" class="code">{{ url_for('endpoints.get_current_alert_level') }}</a></p>
+
+    <p>Data is updated by contributors to <a href="https://github.com/rmasters/uk-covid19-alert-level" target="_blank">github.com/rmasters/uk-covid19-alert-level</a> <em>on an ad-hoc basis</em>. Yell at <a href="https://twitter.com/rossmasters" target="_blank">@rossmasters</a>.</p>
+  </body>
+</html>

@@ -19,6 +19,7 @@ class AlertMovement(TypedDict):
     source: str
     from_level: str
     to_level: str
+    direction: str
 
 
 class AlertStatus(TypedDict):
@@ -34,6 +35,14 @@ class CovidAlertLevel:
     def load(cls, path: Union[str, Path]) -> CovidAlertLevel:
         with open(path) as f:
             data = yaml.load(f)
+
+        movements = data['movements']
+
+        def modify_movement(movement) -> AlertMovement:
+            movement['direction'] = 'up' if movement['from_level'] < movement['to_level'] else 'down'
+            return movement
+
+        movements = list(map(modify_movement, movements))
 
         return cls(data["levels"], data["movements"])
 
