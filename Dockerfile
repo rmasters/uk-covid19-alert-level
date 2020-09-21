@@ -11,4 +11,4 @@ ENV FLASK_APP=covid_alert_levels
 ENV FLASK_ENV=production
 
 EXPOSE 8000
-CMD ["uwsgi", "--host=0.0.0.0", "--port=8000", ""]
+CMD ["uwsgi", "--http=0.0.0.0:8000", "--manage-script-name", "--mount=/=covid_alert_levels.wsgi:application"]
