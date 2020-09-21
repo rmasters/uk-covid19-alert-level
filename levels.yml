@@ -1,19 +1,37 @@
+levels:
+  - label: '5'
+    rgb: [234, 80, 67]
+    description: As level 4 and there is a material risk of healthcare services being overwhelmed
+    action: Social distancing measures increase from today’s level
+
+  - label: '4'
+    rgb: [246, 137, 35]
+    description: A COVID-19 epidemic is in general circulation; transmission is high or rising exponentially
+    action: Current social distancing measures and restrictions
+
+  - label: '3'
+    rgb: [255, 193, 1]
+    description: A COVID-19 epidemic is in general circulation
+    action: Gradual relaxing of restrictions and social distancing measures
+
+  - label: '2'
+    rgb: [157, 187, 59]
+    description: COVID-19 is present in the UK, but the number of cases and transmission is low
+    action: No or minimal social distancing measures; enhanced testing, tracing, monitoring and screening
+
+  - label: '1'
+    rgb: [58, 178, 114]
+    description: COVID-19 is not known to be present in the UK
+    action: Routine international monitoring
+
 movements:
   - date: 2020-09-21
     source: https://www.gov.uk/government/news/update-from-the-uk-chief-medical-officers-on-the-covid-19-alert-level
-    fromLevel: 3
-    toLevel: 4
-    type: recommendation
-    bodies:
-      - Joint Biosecurity Centre
-      - Chief Medical Officers
+    from_level: '3'
+    to_level: '4'
 
   - date: 2020-06-19
     source: https://www.gov.uk/government/news/update-from-the-uk-chief-medical-officers-on-the-uk-alert-level
-    fromLevel: 4
-    toLevel: 3
-    type: recommendation
-    bodies:
-      - Joint Biosecurity Centre
-      - Chief Medical Officers
+    from_level: '4'
+    to_level: '3'
 
